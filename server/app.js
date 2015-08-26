@@ -1,7 +1,9 @@
 var path = require('path');
 var express = require('express');
 
+
 var app = express(); // Create an express app!
+
 module.exports = app; // Export it so it can be require('')'d
 
 // The path of our public directory. ([ROOT]/public)
@@ -21,7 +23,9 @@ var indexHtmlPath = path.join(__dirname, '../index.html');
 // e.g. angular.js, style.css
 app.use(express.static(publicPath));
 
+
 // If we're hitting our home page, serve up our index.html file!
 app.get('/', function (req, res) {
     res.sendFile(indexHtmlPath);
 });
+
